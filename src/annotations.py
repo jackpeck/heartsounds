@@ -4,7 +4,7 @@ import datetime
 from .find_heart_sound_locations import find_s1s, find_s2s
 from .intervals import find_good_intervals, align_intervals
 
-def save_annotations_to_file (annotations_folder_path, base_filename, timings_for_intervals, include_timestamp=True):
+def save_annotations_to_file (annotations_folder_path, base_filename, timings_for_intervals, include_timestamp=False):
     data = json.dumps(timings_for_intervals, indent=4)
 
     extension = '.json'
