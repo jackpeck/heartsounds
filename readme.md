@@ -28,8 +28,8 @@ save_annotations_to_file('./', 'annotations.json', annotations)
 
 # Examples
 
-- [Heart sounds annotations]()
-- [Using local ECG files]()
-- [Using multiple ECG files]()
-- [Visualizations using ECG and PCG]()
-- [Visualizations using local ECG and PCG files]()
+- [Heart sounds annotations](example-produce-heart-sound-annotations.ipynb)
+- [Using local ECG files](example-local-file.ipynb)
+- [Using multiple ECG files](example-multiple-files.ipynb)
+- [Visualizations using ECG and PCG](example-visualizations.ipynb)
+- [Visualizations using local ECG and PCG files](example-visualizations-local-file.ipynb)
