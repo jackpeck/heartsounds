@@ -25,7 +25,7 @@ def soundIsInPeriod (sound_times, period):
 
 def get_heart_sound_timings_by_intervals (ecg_peaks, audio_timing_offset=0):
     s1s = find_s1s(ecg_peaks.rpeaks_where_next_is_also_agreed) + audio_timing_offset
-    s2s = find_s2s(ecg_peaks.t_peaks_ends) + audio_timing_offset
+    s2s = find_s2s(ecg_peaks.t_peak_ends) + audio_timing_offset
 
     intervals_unaligned = find_good_intervals(ecg_peaks)
 

@@ -7,7 +7,7 @@ from .find_t_peak_ends_minima_gap import find_t_peak_ends_minima_gap
 
 @dataclass
 class ECG_t_end_peaks:
-    t_peaks_ends: np.ndarray
+    t_peak_ends: np.ndarray
     t_peak_ends_by_detector: dict
 
 
@@ -15,7 +15,7 @@ def find_t_peak_ends(signal, sample_rate, agreed_r_peaks, rpeaks_where_next_is_a
 
     t_peak_ends_by_detector = find_t_peak_ends_by_detector(signal, sample_rate, agreed_r_peaks, rpeaks_where_next_is_also_agreed)
 
-    agreed_t_peaks_ends = find_agreeing_points(agreement_time_threshold = agreement_time_threshold,
+    agreed_t_peak_ends = find_agreeing_points(agreement_time_threshold = agreement_time_threshold,
                         max_disagreers = max_disagreers,
                         indices_by_detector = t_peak_ends_by_detector,
                         signal = signal,
@@ -23,7 +23,7 @@ def find_t_peak_ends(signal, sample_rate, agreed_r_peaks, rpeaks_where_next_is_a
                         root_detector = root_detector,
                         agree_reduce_method = agree_reduce_method)
     
-    return ECG_t_end_peaks(agreed_t_peaks_ends, t_peak_ends_by_detector)
+    return ECG_t_end_peaks(agreed_t_peak_ends, t_peak_ends_by_detector)
 
 
 def find_t_peak_ends_by_detector (signal, sample_rate, agreed_r_peaks, rpeaks_where_next_is_also_agreed):

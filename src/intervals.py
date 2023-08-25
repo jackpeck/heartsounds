@@ -10,7 +10,7 @@ def find_good_intervals (ecg_peaks):
 
         if good and prevPeak is not None:
             # check there exists a t peak end between prevPeak and peak
-            mask = (ecg_peaks.t_peaks_ends > prevPeak) & (ecg_peaks.t_peaks_ends < peak)
+            mask = (ecg_peaks.t_peak_ends > prevPeak) & (ecg_peaks.t_peak_ends < peak)
             n = mask.sum()
             good = n == 1
 

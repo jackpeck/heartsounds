@@ -15,7 +15,7 @@ class ECG_peaks:
     downsampled_signal: np.ndarray
     downsampled_sample_rate: float
 
-    t_peaks_ends: np.ndarray
+    t_peak_ends: np.ndarray
     t_peak_ends_by_detector: dict
 
 
@@ -34,6 +34,6 @@ def find_ecg_peaks(ecg, ecg_sample_rate, r_peak_agreement_time_threshold = 0.1, 
 
     return ECG_peaks(ecg_r_peaks.r_peaks, ecg_r_peaks.rpeaks_where_next_is_also_agreed,
                      ecg_r_peaks.rpeaks_by_detector, ecg_r_peaks.downsampled_signal,
-                     ecg_r_peaks.downsampled_sample_rate, ecg_t_peak_ends.t_peaks_ends,
+                     ecg_r_peaks.downsampled_sample_rate, ecg_t_peak_ends.t_peak_ends,
                      ecg_t_peak_ends.t_peak_ends_by_detector)
 

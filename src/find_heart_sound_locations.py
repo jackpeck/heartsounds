@@ -8,8 +8,8 @@ def find_s1s (rpeaks_where_next_is_also_agreed):
         for peak in rpeaks_where_next_is_also_agreed
     ])
 
-def find_s2s (agreed_t_peaks_ends):
+def find_s2s (agreed_t_peak_ends):
     return np.array([
         (peak - mean_s2_duration/2, peak + mean_s2_duration/2)
-        for peak in agreed_t_peaks_ends
+        for peak in agreed_t_peak_ends
     ])
