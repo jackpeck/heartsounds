@@ -4,11 +4,17 @@
 
 ![ECG with peaks](docs/img/ecg-labelled.png)
 
+# Installation
+You can download HeartSounds from [PyPI](https://pypi.org/project/HeartSounds/).
+```
+pip install heartsounds
+```
+
 # Quick example
 
 ```python
-from src.find_ecg_peaks import find_ecg_peaks
-from src.annotations import get_heart_sound_timings_by_intervals, save_annotations_to_file
+from heartsounds.find_ecg_peaks import find_ecg_peaks
+from heartsounds.annotations import get_heart_sound_timings_by_intervals, save_annotations_to_file
 import wfdb
 
 # Download example data
