@@ -3,7 +3,7 @@ from wfdb import processing
 
 def find_r_peaks_xqrs(downsampled_signal: np.ndarray, fs: int) -> np.ndarray:
     xqrs = processing.XQRS(sig=downsampled_signal, fs=fs)
-    xqrs.detect()
+    xqrs.detect(verbose=False)
 
     # Correct the peaks shifting them to local maxima
     max_bpm = 230
