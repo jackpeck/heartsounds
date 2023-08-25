@@ -23,7 +23,7 @@ ecg_peaks = find_ecg_peaks(ecg, ecg_sample_rate)
 annotations = get_heart_sound_timings_by_intervals(ecg_peaks)
 
 # Save annotations to file
-save_annotations_to_file('./', 'annotations.json', annotations)
+save_annotations_to_file('./', 'annotations', annotations)
 ```
 
 # Examples
