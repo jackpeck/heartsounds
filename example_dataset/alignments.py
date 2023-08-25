@@ -24,5 +24,6 @@ better_alignments = [
 
 subjects = [i for i, _ in better_alignments]
 
-def get_alignment_offset (subject):
+
+def get_alignment_offset(subject):
     return [i for i in better_alignments if i[0] == subject][0][1]

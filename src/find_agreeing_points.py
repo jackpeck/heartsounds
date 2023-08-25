@@ -1,16 +1,18 @@
 import numpy as np
 from enum import Enum
 
-Agree_reduce_method = Enum('Agree_reduce_method', ('MEDIAN', 'MAX'))
+Agree_reduce_method = Enum("Agree_reduce_method", ("MEDIAN", "MAX"))
 
-def find_agreeing_points (agreement_time_threshold: float,
-                          max_disagreers: int,
-                          indices_by_detector: dict,
-                          signal: np.ndarray,
-                          sample_rate: float,
-                          root_detector: str,
-                          agree_reduce_method: Agree_reduce_method) -> np.ndarray:
-    
+
+def find_agreeing_points(
+    agreement_time_threshold: float,
+    max_disagreers: int,
+    indices_by_detector: dict,
+    signal: np.ndarray,
+    sample_rate: float,
+    root_detector: str,
+    agree_reduce_method: Agree_reduce_method,
+) -> np.ndarray:
     signal_times = np.arange(len(signal)) / sample_rate
 
     times_by_detector = {}
@@ -45,14 +47,16 @@ def find_agreeing_points (agreement_time_threshold: float,
 
                 max_peak_time = time_range[np.argmax(signal_range)]
 
-                agreed_points.append(max_peak_time)   
+                agreed_points.append(max_peak_time)
             elif agree_reduce_method == Agree_reduce_method.MEDIAN:
                 agreeing_times = sorted_times[mask]
                 median = np.median(agreeing_times)
                 agreed_points.append(median)
             else:
                 print(agree_reduce_method == Agree_reduce_method.MAX)
-                raise NotImplementedError(f"unknown agree_reduce_method {agree_reduce_method}")
+                raise NotImplementedError(
+                    f"unknown agree_reduce_method {agree_reduce_method}"
+                )
     agreed_points = np.array(agreed_points)
 
     return agreed_points

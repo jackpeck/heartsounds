@@ -2,7 +2,12 @@ import math
 import numpy as np
 import scipy.signal
 
-def find_t_peak_ends_minima_gap(sig: np.ndarray, r_peaks_where_next_is_also_agreed_indices: np.ndarray, agreed_r_peaks_indices: np.ndarray) -> np.ndarray:
+
+def find_t_peak_ends_minima_gap(
+    sig: np.ndarray,
+    r_peaks_where_next_is_also_agreed_indices: np.ndarray,
+    agreed_r_peaks_indices: np.ndarray,
+) -> np.ndarray:
     # find local minima, then first minima with greatest gap from prior minima, then find first >0 point after that minima
 
     derivative = np.gradient(sig)
@@ -19,7 +24,9 @@ def find_t_peak_ends_minima_gap(sig: np.ndarray, r_peaks_where_next_is_also_agre
 
         peak_post = agreed_r_peaks_indices[i + 1]
 
-        post_threshold = peak_pre + 0.7 * (peak_post - peak_pre) # assume t peak end is in first 70% of r-r interval
+        post_threshold = peak_pre + 0.7 * (
+            peak_post - peak_pre
+        )  # assume t peak end is in first 70% of r-r interval
         minima_between = minima[(minima > peak_pre) & (minima < post_threshold)]
 
         max_gap = -math.inf
