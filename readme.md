@@ -1,4 +1,4 @@
-**HeartSounds** is a package for automatically annotating heart sounds locations based on ECG traces.
+**HeartSounds** is a package for automatically annotating heart sound locations based on ECG traces.
 
 ![Audio with S1 and S2 periods](docs/img/audio-labelled.png)
 
